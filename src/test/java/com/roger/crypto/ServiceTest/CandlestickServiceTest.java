@@ -2,7 +2,7 @@ package com.roger.crypto.ServiceTest;
 
 import com.roger.crypto.service.CandlestickService;
 import com.roger.crypto.service.DataSourceService;
-import com.roger.crypto.service.Refactor;
+import com.roger.crypto.service.CandlestickAggregator;
 import com.roger.crypto.model.Candlestick;
 import com.roger.crypto.repository.CandlestickMyBatisRepository;
 import org.junit.jupiter.api.Test;
@@ -24,7 +24,7 @@ public class CandlestickServiceTest {
     private CandlestickMyBatisRepository candleRepository;
 
     @Mock
-    private Refactor refactor;
+    private CandlestickAggregator candlestickAggregator;
 
     @Autowired
     private DataSourceService<Candlestick> dataSourceService;
@@ -39,7 +39,7 @@ public class CandlestickServiceTest {
     @Test
     public void test_get(){
         List<Candlestick> testC =  service.get("BTCUSDT",1523577600000L,1523664000000L,4);
-        Mockito.verify(refactor).intervalRefactor(testC,4);
+        Mockito.verify(candlestickAggregator).aggregateByInterval(testC,4);
     }
 }
 //40be833c10a5401597780eb154ab2561

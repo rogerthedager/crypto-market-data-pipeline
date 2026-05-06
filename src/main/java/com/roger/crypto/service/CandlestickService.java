@@ -20,7 +20,7 @@ public class CandlestickService {
     private DataSourceService<Candlestick> service;
 
     @Autowired
-    private Refactor factor;
+    private CandlestickAggregator candlestickAggregator;
 
     public void load(String symbol, Long startTime, Long endTime) {
         Integer limit = 500;
@@ -43,7 +43,7 @@ public class CandlestickService {
 
         List<Candlestick> data = candleRepository.findData(symbol, startTime, endTime);
 
-        return factor.intervalRefactor(data,interval);
+        return candlestickAggregator.aggregateByInterval(data,interval);
 
     }
 

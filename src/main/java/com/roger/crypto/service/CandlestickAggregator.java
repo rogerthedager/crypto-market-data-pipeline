@@ -8,12 +8,12 @@ import java.util.List;
 
 
 @Service
-public class Refactor {
+public class CandlestickAggregator {
 
 //    @Autowired
 //    private CandlestickMyBatisRepository candleRepository;
 
-    public List<Candlestick> intervalRefactor(List<Candlestick> data, Integer interval) {
+    public List<Candlestick> aggregateByInterval(List<Candlestick> data, Integer interval) {
 
         List<Candlestick> returnData = new ArrayList<>();
 

@@ -22,7 +22,7 @@ logs/
 # Eclipse / STS
 .apt_generated
 .classpath
-.factorypath
+.factorypathF
 .project
 .settings/
 .springBeans

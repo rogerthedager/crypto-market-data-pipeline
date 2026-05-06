@@ -1,7 +1,7 @@
 package com.roger.crypto.ServiceTest;
 
 
-import com.roger.crypto.service.Refactor;
+import com.roger.crypto.service.CandlestickAggregator;
 import com.roger.crypto.model.Candlestick;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -13,10 +13,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 @ExtendWith(MockitoExtension.class)
-public class RefactorTest {
+public class CandlestickAggregatorTest {
 
     @InjectMocks
-    private Refactor refactor;
+    private CandlestickAggregator candlestickAggregator;
 
 
 
@@ -107,7 +107,7 @@ public class RefactorTest {
         List<Candlestick> data1 = new ArrayList<>();
         data1.add(g);
 
-        data = refactor.intervalRefactor(data,4);
+        data = candlestickAggregator.aggregateByInterval(data,4);
         data.get(0);
         Assertions.assertEquals(data.get(0),g);
     }
