@@ -269,7 +269,6 @@ Or:
 
 ## Future Improvements
 
-- Rename `Refactor` to `CandlestickAggregator` for clearer domain naming
 - Add Redis-based distributed locking to prevent duplicate ingestion jobs
 - Add scheduled ingestion using Spring Scheduler or AWS EventBridge
 - Add Docker support for local MySQL and application startup
