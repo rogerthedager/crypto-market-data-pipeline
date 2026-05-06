@@ -82,7 +82,7 @@ crypto-market-data-pipeline/
             BinanceSourceServiceImpl.java
             CandlestickService.java
             DataSourceService.java
-            Refactor.java
+            CandlestickAggregator.java
 
       resources/
         application-example.properties
